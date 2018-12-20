@@ -29,7 +29,11 @@ Setup & Install Dependencies::
 Run
 ---
 
-::
+Initialize Database::
+    
+    flask init-db
+
+Start Server::
 
     export FLASK_APP=app
     export FLASK_ENV=development
@@ -57,3 +61,21 @@ Run with coverage report::
     coverage run -m pytest
     coverage report
     coverage html  # open htmlcov/index.html in a browser
+
+
+API
+----
+
+Find all documents::
+
+    curl -i -X GET http://127.0.0.1:5000/documents/
+
+Find a document by id::
+    
+    # Replace <int:id> with an integer
+    curl -i -X GET http://127.0.0.1:5000/documents/<int:id>                
+
+Upload a document::
+    
+    # Replace <path_to_file> with the absolute filepath of the xml document
+    curl -i -X POST -F file=@<path_to_file> http://127.0.0.1:5000/documents/upload
