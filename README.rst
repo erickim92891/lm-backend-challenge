@@ -24,6 +24,7 @@ Or on Windows cmd::
 
 Setup & Install Dependencies::
 
+    # NOTE: This might take a while since lxml may need to install C binaries.
     pip install -e .
 
 Run
