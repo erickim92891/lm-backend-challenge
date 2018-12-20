@@ -1,25 +1,16 @@
-Flaskr
+LegalMation Backend Coding Challenge
 ======
 
-The basic blog app built in the Flask `tutorial`_.
-
-.. _tutorial: http://flask.pocoo.org/docs/tutorial/
-
+RESTful backend API to ingest xml file, process, and output results.
 
 Install
 -------
 
-**Be sure to use the same version of the code as the version of the docs
-you're reading.** You probably want the latest tagged version, but the
-default Git version is the master branch. ::
+Clone Repo::
 
     # clone the repository
-    git clone https://github.com/pallets/flask
-    cd flask
-    # checkout the correct version
-    git tag  # shows the tagged versions
-    git checkout latest-tag-found-above
-    cd examples/tutorial
+    git clone https://github.com/erickim92891/lm-backend-challenge
+    cd lm-backend-challenge
 
 Create a virtualenv and activate it::
 
@@ -31,33 +22,26 @@ Or on Windows cmd::
     py -3 -m venv venv
     venv\Scripts\activate.bat
 
-Install Flaskr::
+Setup & Install Dependencies::
 
     pip install -e .
-
-Or if you are using the master branch, install Flask from source before
-installing Flaskr::
-
-    pip install -e ../..
-    pip install -e .
-
 
 Run
 ---
 
 ::
 
-    export FLASK_APP=flaskr
+    export FLASK_APP=app
     export FLASK_ENV=development
     flask run
 
 Or on Windows cmd::
 
-    set FLASK_APP=flaskr
+    set FLASK_APP=app
     set FLASK_ENV=development
     flask run
 
-Open http://127.0.0.1:5000 in a browser.
+Open http://127.0.0.1:5000 in a browser to view Swagger JSON API documentation
 
 
 Test
