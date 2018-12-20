@@ -49,8 +49,8 @@ Test
 
 ::
 
-    pip install '.[test]'
-    pytest
+    pip install -e '.[test]'
+    pytest -v
 
 Run with coverage report::
 
