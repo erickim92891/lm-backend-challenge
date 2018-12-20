@@ -1,4 +1,4 @@
-"""NOTE: Databaset setup is copied from http://flask.pocoo.org/docs/1.0/tutorial/database/"""
+"""NOTE: Database setup is copied from http://flask.pocoo.org/docs/1.0/tutorial/database/"""
 
 import sqlite3
 

@@ -4,10 +4,10 @@ Jinja2==2.10
 MarkupSafe==1.1.0
 Werkzeug==0.14.1
 aniso8601==4.0.1
-## !! Could not determine repository location
-app==1.0.0
+-e git+https://github.com/erickim92891/lm-backend-challenge.git@c98542d59690a7a6bb2a14b1f88f667d2b86cc4a#egg=app-master
 atomicwrites==1.2.1
 attrs==18.2.0
+coverage==4.5.2
 flask-restplus==0.12.1
 itsdangerous==1.1.0
 jsonschema==2.6.0

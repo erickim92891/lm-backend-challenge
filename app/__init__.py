@@ -16,16 +16,15 @@ def create_app(test_config=None):
         SECRET_KEY='dev',
         DATABASE=os.path.join(app.instance_path, 'app-db.sqlite'),
     )
-    
-    api = Api(app, version='1.0', title='LegalMation XMLParser', description="Parses text from xml file")
-    ns = api.namespace('documents', description="Uploaded XML documents.")
-
     if test_config is None:
         # load the instance config, if it exists, when not testing
         app.config.from_pyfile('config.py', silent=True)
     else:
         # load the test config if passed in
         app.config.from_mapping(test_config)
+
+    api = Api(app, version='1.0', title='LegalMation XMLParser', description="Parses text from xml file")
+    ns = api.namespace('documents', description="Uploaded XML documents.")
 
     # ensure the instance folder exists
     try:
@@ -90,9 +89,6 @@ def create_app(test_config=None):
             
             file = request.files['file']
             
-            if file.filename == '':
-                api.abort(400, 'No selected file')
-            
             if file:
                 try:
                     lm_xml_parser = XmlParser(file)
@@ -107,8 +103,6 @@ def create_app(test_config=None):
                     return dict(document)
                 except IOError:
                     abort(400, 'Invalid xml file.')
-                except etree.XMLSyntaxError as err:
-                    abort(400, 'xml Syntax Error')
     
     return app
 
