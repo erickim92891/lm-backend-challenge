@@ -1,3 +1,6 @@
+'''SETUP File copied from http://flask.pocoo.org/docs/tutorial/'''
+'''Only made modifications to add extra dependencies'''
+
 import io
 
 from setuptools import find_packages, setup
